@@ -1,7 +1,9 @@
 ---
 name: "❓Questions & Help"
 about: Have some questions? We can offer help.
+title: ''
 labels: question
+assignees: ''
 
 ---
 

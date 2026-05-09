@@ -1,6 +1,9 @@
 ---
 name: "\U0001F4D6 Documentation"
 about: Report an issue related to documentation
+title: ''
+labels: ''
+assignees: ''
 
 ---
 
