@@ -1,0 +1,615 @@
+# Instincts generated from https://github.com/ZhtttyWorld/qlib
+# Generated: 2026-05-09T02:46:52.338Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: qlib-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Commit Length
+
+## Action
+
+Keep commit messages concise (~42 characters)
+
+## Evidence
+
+- Average commit message length: 42 chars
+- Based on 200 commits
+
+---
+id: qlib-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: qlib-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: qlib-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: qlib-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: qlib-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: qlib-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~7x per month
+- Files: docs/component/*, **/*.test.*
+
+---
+id: qlib-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: src/**/*
+
+---
+id: qlib-workflow-update-ci-workflows-and-build-metadata
+trigger: "when doing update ci workflows and build metadata"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Workflow Update Ci Workflows And Build Metadata
+
+## Action
+
+Follow the update-ci-workflows-and-build-metadata workflow:
+1. Edit one or more .github/workflows/*.yml files to adjust CI behavior.
+2. Update version metadata in pyproject.toml, qlib/__init__.py, and/or setup.py.
+3. Optionally update Makefile or CHANGELOG.md.
+4. Commit all related changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: .github/workflows/*.yml, pyproject.toml, qlib/__init__.py
+
+---
+id: qlib-workflow-feature-or-refactor-with-tests
+trigger: "when doing feature or refactor with tests"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Workflow Feature Or Refactor With Tests
+
+## Action
+
+Follow the feature-or-refactor-with-tests workflow:
+1. Edit or create implementation files (e.g., in qlib/contrib/strategy/, qlib/contrib/model/, etc.).
+2. Edit or create corresponding test files under tests/ (often with similar names).
+3. Commit both implementation and tests together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: qlib/contrib/strategy/*.py, qlib/contrib/model/*.py, tests/**/*.py
+
+---
+id: qlib-workflow-documentation-update
+trigger: "when doing documentation update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Workflow Documentation Update
+
+## Action
+
+Follow the documentation-update workflow:
+1. Edit one or more documentation files (README.md, docs/**/*.rst, examples/**/*.md, etc.).
+2. Optionally update code comments or docstrings.
+3. Commit documentation changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: README.md, docs/**/*.rst, examples/**/*.md
+
+---
+id: qlib-workflow-data-collector-script-update
+trigger: "when doing data collector script update"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Workflow Data Collector Script Update
+
+## Action
+
+Follow the data-collector-script-update workflow:
+1. Edit one or more scripts under scripts/data_collector/ (e.g., utils.py, collector.py).
+2. Optionally update related requirements.txt or documentation.
+3. Commit all related changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: scripts/data_collector/**/*.py, scripts/data_collector/**/requirements.txt
+
+---
+id: qlib-workflow-security-fix-pickle-usage
+trigger: "when doing security fix pickle usage"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/ZhtttyWorld/qlib
+---
+
+# Qlib Workflow Security Fix Pickle Usage
+
+## Action
+
+Follow the security-fix-pickle-usage workflow:
+1. Edit Python files to replace or restrict pickle.load usage (e.g., enforce RestrictedUnpickler or restrict classes).
+2. Update affected modules across qlib/ and sometimes tests/.
+3. Commit all security-related changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: qlib/**/*.py, tests/**/*.py
+
+---
+id: qlib-instinct-naming-files
+trigger: "When creating or renaming files."
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Naming Files
+
+## Action
+
+Use snake_case for file names.
+
+## Evidence
+
+- Pattern in file naming conventions
+- Consistent use in qlib/ and scripts/
+
+---
+id: qlib-instinct-naming-functions
+trigger: "When defining a function."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Naming Functions
+
+## Action
+
+Use camelCase for function names.
+
+## Evidence
+
+- Pattern in function naming conventions
+- Examples in qlib/**/*.py
+
+---
+id: qlib-instinct-naming-classes
+trigger: "When defining a class."
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Naming Classes
+
+## Action
+
+Use PascalCase for class names.
+
+## Evidence
+
+- Pattern in class naming conventions
+- Examples in qlib/**/*.py
+
+---
+id: qlib-instinct-naming-constants
+trigger: "When defining a constant."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Naming Constants
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constants.
+
+## Evidence
+
+- Pattern in constant naming conventions
+- Examples in qlib/**/*.py
+
+---
+id: qlib-instinct-import-style
+trigger: "When importing modules within the package."
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Import Style
+
+## Action
+
+Use relative imports.
+
+## Evidence
+
+- Pattern in import statements
+- Examples in qlib/**/*.py
+
+---
+id: qlib-instinct-export-style
+trigger: "When exporting functions or classes."
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Export Style
+
+## Action
+
+Use named exports.
+
+## Evidence
+
+- Pattern in module exports
+- Examples in qlib/**/*.py
+
+---
+id: qlib-instinct-test-location
+trigger: "When adding or updating tests."
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Test Location
+
+## Action
+
+Place test files in the separate tests/ directory, mirroring the structure of the code being tested.
+
+## Evidence
+
+- Architecture: testLocation is separate
+- Pattern in tests/**/*.py
+
+---
+id: qlib-instinct-test-type
+trigger: "When writing tests."
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Test Type
+
+## Action
+
+Write unit tests for new or updated features.
+
+## Evidence
+
+- Testing: testTypes includes unit
+- Pattern in tests/**/*.py
+
+---
+id: qlib-instinct-test-naming
+trigger: "When naming test files."
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Test Naming
+
+## Action
+
+Use the same or similar name as the implementation file, but place it under tests/.
+
+## Evidence
+
+- Pattern in tests/**/*.py
+- Workflow: feature-or-refactor-with-tests
+
+---
+id: qlib-instinct-commit-prefix
+trigger: "When writing a commit message."
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Commit Prefix
+
+## Action
+
+Use a conventional prefix such as fix:, feat:, refactor:, docs:, or chore:.
+
+## Evidence
+
+- Pattern in commit prefixes
+- Examples: fix: incorrect index implementation in FileCalendarStorage (#2195)
+
+---
+id: qlib-instinct-commit-format
+trigger: "When writing a commit message."
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Commit Format
+
+## Action
+
+Keep commit messages concise (average ~42 characters), and reference related issues or PRs when relevant.
+
+## Evidence
+
+- Pattern in commit length
+- Examples: fix: value error caused by incorrect date format in daily data (#2015)
+
+---
+id: qlib-instinct-update-ci-workflow
+trigger: "When releasing a new version, updating build/test infrastructure, or changing dependencies."
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Update Ci Workflow
+
+## Action
+
+Edit .github/workflows/*.yml, update version metadata in pyproject.toml, qlib/__init__.py, or setup.py, and optionally update Makefile or CHANGELOG.md. Commit all related changes together.
+
+## Evidence
+
+- Workflow: update-ci-workflows-and-build-metadata
+- Pattern in commits and files
+
+---
+id: qlib-instinct-feature-with-tests
+trigger: "When implementing a new feature or refactoring an existing one and ensuring correctness with tests."
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Feature With Tests
+
+## Action
+
+Edit or create implementation files in qlib/contrib/strategy/ or qlib/contrib/model/, edit or create corresponding test files under tests/, and commit both together.
+
+## Evidence
+
+- Workflow: feature-or-refactor-with-tests
+- Pattern in commit sequences and files
+
+---
+id: qlib-instinct-documentation-update
+trigger: "When documentation needs correction or improvement."
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Documentation Update
+
+## Action
+
+Edit documentation files (README.md, docs/**/*.rst, examples/**/*.md, etc.), optionally update code comments or docstrings, and commit documentation changes.
+
+## Evidence
+
+- Workflow: documentation-update
+- Pattern in commit sequences and files
+
+---
+id: qlib-instinct-data-collector-update
+trigger: "When data collection scripts need bug fixes, API endpoint changes, or enhancements."
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Data Collector Update
+
+## Action
+
+Edit scripts in scripts/data_collector/, optionally update requirements.txt or documentation, and commit all related changes together.
+
+## Evidence
+
+- Workflow: data-collector-script-update
+- Pattern in commit sequences and files
+
+---
+id: qlib-instinct-security-fix-pickle
+trigger: "When a security issue is found related to pickle usage."
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: ZhtttyWorld/qlib
+---
+
+# Qlib Instinct Security Fix Pickle
+
+## Action
+
+Edit Python files to replace or restrict pickle.load usage, update affected modules across qlib/ and tests/, and commit all security-related changes together.
+
+## Evidence
+
+- Workflow: security-fix-pickle-usage
+- Pattern in commit sequences and files
+
